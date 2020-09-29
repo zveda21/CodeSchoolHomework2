@@ -14,12 +14,16 @@
     <style name="ButtonsStyleLight" parent="Widget.AppCompat.Button">
         <item name="android:background">@color/grayColorLight</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">30sp</item>
     </style>
     <style name="ButtonsStyleDark">
         <item name="android:background">@color/grayColorDark</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textSize">20sp</item>
-
+        <item name="android:textSize">30sp</item>
+    </style>
+    <style name="YellowButtonStyle">
+        <item name="android:background">@color/yellowColor</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">30sp</item>
     </style>
 </resources>

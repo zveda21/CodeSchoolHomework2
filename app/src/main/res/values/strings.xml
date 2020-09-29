@@ -11,5 +11,21 @@
     <string name="numberEight">8</string>
     <string name="numberNine">9</string>
     <string name="numberZero">0</string>
+    <string name="cSting">C</string>
+    <string name="mcString">MC</string>
+    <string name="mrString">MR</string>
+    <string name="mpString">M+</string>
+    <string name="xString">X</string>
+    <string name="plString">±</string>
+    <string name="percentString">%</string>
+    <string name="divideString">÷</string>
+    <string name="multiplyString">×</string>
+    <string name="minusString">-</string>
+    <string name="plusString">+</string>
+    <string name="equalString">=</string>
+    <string name="dotString">.</string>
+
+
+
 
 </resources>
