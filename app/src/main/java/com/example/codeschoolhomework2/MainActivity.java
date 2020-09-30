@@ -2,9 +2,13 @@ package com.example.codeschoolhomework2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -27,15 +31,44 @@ public class MainActivity extends AppCompatActivity {
     private Button btnEqual;
     private Button btnDivide;
     private Button btnMultiply;
-    private int[] numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    private TextView tvCalculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        tvCalculator = findViewById(R.id.calculatorTV);
     }
 
-    public void clickOnButtons(View view) {
-                Toast.makeText(getApplicationContext(), "hello its "+ ((Button)view).getText(), Toast.LENGTH_SHORT).show();
+    @SuppressLint("SetTextI18n")
+    public void onNumberButtonClick(View view) {
+        //Toast.makeText(getApplicationContext(), "hello its " + ((Button) view).getText(), Toast.LENGTH_SHORT).show();
+        tvCalculator.setText(tvCalculator.getText().toString() + ((Button) view).getText());
     }
+
+    public void onRemoveButton(View view) {
+        try {
+            if (!tvCalculator.getText().toString().isEmpty()) {
+                String calcText = tvCalculator.getText().toString();
+                Log.e("CalText", calcText);
+                calcText = calcText.substring(0, calcText.length() - 1);
+                tvCalculator.setText(calcText);
+            } else if (tvCalculator.getText().toString().isEmpty())
+                Toast.makeText(this, "Its Empty", Toast.LENGTH_SHORT).show();
+        } catch (StringIndexOutOfBoundsException e) {
+            Log.e("Exception", "String Index is out of bounds");
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void plusNumbers(View view){
+       tvCalculator.setText(tvCalculator.getText().toString() + ((Button) view).getText());
+      int a = Integer.parseInt(String.valueOf(tvCalculator.getText().charAt(2)));
+      //int b = Integer.parseInt(String.valueOf(tvCalculator.getText().charAt(2)));
+        Log.e("Sum", String.valueOf(a));
+       // Log.e("Sum", String.valueOf(b));
+    }
+
+
+
 }
