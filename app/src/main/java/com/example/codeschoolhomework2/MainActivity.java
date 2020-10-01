@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnDivide;
     private Button btnMultiply;
     private TextView tvCalculator;
+    private OperationType operationType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,14 +62,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    public void plusNumbers(View view){
-       tvCalculator.setText(tvCalculator.getText().toString() + ((Button) view).getText());
-      int a = Integer.parseInt(String.valueOf(tvCalculator.getText().charAt(2)));
-      //int b = Integer.parseInt(String.valueOf(tvCalculator.getText().charAt(2)));
+    public void plusNumbers(View view) {
+        tvCalculator.setText(tvCalculator.getText().toString() + ((Button) view).getText());
+        int a = Integer.parseInt(String.valueOf(tvCalculator.getText().charAt(0)));
+        int b = Integer.parseInt(String.valueOf(tvCalculator.getText().charAt(2)));
         Log.e("Sum", String.valueOf(a));
-       // Log.e("Sum", String.valueOf(b));
+        Log.e("Sum", String.valueOf(b));
     }
 
+    public void onPlusButtonClick(View view) {
+        operationType = OperationType.PLUS;
+        tvCalculator.setText(tvCalculator.getText().toString() + ((Button) view).getText());
+    }
+
+    public void onMinusButtonClick(View view) {
+        operationType = OperationType.MINUS;
+        tvCalculator.setText(tvCalculator.getText().toString() + ((Button) view).getText());
+    }
+
+    public void onMultiplyButtonClick(View view) {
+        operationType = OperationType.MULTIPLY;
+        tvCalculator.setText(tvCalculator.getText().toString() + ((Button) view).getText());
+    }
+
+    public void onDivideButtonClick(View view) {
+        operationType = OperationType.DIVIDE;
+        tvCalculator.setText(tvCalculator.getText().toString() + ((Button) view).getText());
+    }
+    public void  onEqualButtonClick(View view){
+        int a = Integer.parseInt(String.valueOf(tvCalculator.getText().charAt(0)));
+        int b = Integer.parseInt(String.valueOf(tvCalculator.getText().charAt(2)));
+        Log.e("Operation ", String.valueOf(operationType.calculate(a,b)));
+        tvCalculator.setText(String.valueOf(operationType.calculate(a,b)));
+
+    }
 
 
 }
