@@ -16,6 +16,7 @@
         android:padding="@dimen/result_tv_padding"
         android:text=""
         android:maxLines="4"
+        android:maxLength="10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
