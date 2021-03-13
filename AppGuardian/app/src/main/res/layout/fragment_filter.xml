@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_blue"
+    android:padding="@dimen/_10dp"
+    tools:context=".fragments.content.FilterFragment">
+
+    <TextView
+        android:id="@+id/searchContentTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/searchContent"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/contentSpinner"
+        style="@style/mySpinnerItemStyle"
+        android:layout_width="@dimen/_150dp"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginTop="@dimen/_3dp"
+        android:background="@drawable/spinner_background"
+        android:elevation="@dimen/_6dp"
+        android:entries="@array/searchArray"
+        android:gravity="center"
+        android:spinnerMode="dialog"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@id/searchContentTv"
+        app:layout_constraintTop_toBottomOf="@id/searchContentTv" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_3dp"
+        android:background="@drawable/round_shape"
+        android:text="@string/reset"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/orderByTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:text="@string/orderBy"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contentSpinner" />
+
+    <Spinner
+        android:id="@+id/orderSpinner"
+        style="@style/mySpinnerItemStyle"
+        android:layout_width="@dimen/_150dp"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginTop="@dimen/_3dp"
+        android:background="@drawable/spinner_background"
+        android:elevation="@dimen/_6dp"
+        android:entries="@array/orderArray"
+        android:gravity="center"
+        android:spinnerMode="dialog"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@id/searchContentTv"
+        app:layout_constraintTop_toBottomOf="@id/orderByTv" />
+
+    <TextView
+        android:id="@+id/useDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:text="@string/useDate"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orderSpinner" />
+
+    <Spinner
+        android:id="@+id/useDateSpinner"
+        style="@style/mySpinnerItemStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginTop="@dimen/_3dp"
+        android:background="@drawable/spinner_background"
+        android:elevation="@dimen/_6dp"
+        android:entries="@array/useDateArray"
+        android:gravity="center"
+        android:spinnerMode="dialog"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@id/searchContentTv"
+        app:layout_constraintTop_toBottomOf="@id/useDate" />
+
+    <Button
+        android:id="@+id/searchBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10dp"
+        android:background="@drawable/round_shape"
+        android:text="@string/search"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
